@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Guess The Number</title>
+<style type="text/css">
+body {
+	text-align: center;
+}
+
+button {
+	padding: 20px;
+	background-color: rgb(210, 120, 50);
+}
+</style>
+</head>
+<body>
+	<p id="demo"></p>
+	<h1>Guess The Number</h1>
+	<br />
+	<button value="1" onclick="match(1)">1</button>
+	<button value="2" onclick="match(2)">2</button>
+	<button value="3" onclick="match(3)">3</button>
+	<button value="4" onclick="match(4)">4</button>
+	<br />
+	<br />
+	<button value="5" onclick="match(5)">5</button>
+	<button value="6" onclick="match(6)">6</button>
+	<button value="7" onclick="match(7)">7</button>
+	<button value="8" onclick="match(8)">8</button>
+	<br />
+	<br />
+	<button value="9" onclick="match(9)">9</button>
+	<button value="10" onclick="match(10)">10</button>
+	<br />
+	<br />
+	<div id="result"></div>
+	<div id="result2"></div>
+
+	<script>
+		console.log("hello world");
+		function match(val) {
+			var x = Math.floor((Math.random() * 10) + 1);
+			document.getElementById("demo").innerHTML = x;
+
+			var usrinp = val;
+			if (usrinp == x) {
+				// Check browser support
+				if (typeof (Storage) !== "undefined") {
+					if (sessionStorage.currScore) {
+						sessionStorage.currScore = Number(sessionStorage.currScore) + 1;
+					} else {
+						sessionStorage.currScore = 1;
+					}
+					document.getElementById("result").innerHTML = "<br/><hr><br/>Score: "
+							+ sessionStorage.currScore + "<hr>";
+				} else {
+					document.getElementById("result").innerHTML = "Sorry, your browser does not support web storage...";
+				}
+				console.log(sessionStorage.currScore);
+				console.log(localStorage.highScore);
+				if (typeof (Storage) !== "undefined") {
+					if (localStorage.highScore) {
+						if (Number(sessionStorage.currScore) >= Number(localStorage.highScore))
+							localStorage.highScore = sessionStorage.currScore;
+					} else {
+						localStorage.highScore = 1;
+					}
+					document.getElementById("result2").innerHTML = "<br/>HIGH SCORE --> "
+							+ localStorage.highScore + " <br/><hr>";
+				} else {
+					document.getElementById("result2").innerHTML = "Sorry, your browser does not support web storage...";
+				}
+			}
+		}
+	</script>
+</body>
+</html>

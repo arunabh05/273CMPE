@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<style type="text/css">
+.body {
+	margin-top: 20px;
+	margin-left: 450px;
+	margin-right: 450px;
+	text-align: center;
+}
+</style>
+</head>
+<body>
+	<div class="header">
+		<h1>Student Registration Form</h1>
+	</div>
+	<div class="body">
+
+		<form method="get" action="studentRegistrationForm.html">
+			<fieldset>
+				<label>Name </label><label><input id="name" type="text"
+					required placeholder="Full Name" autofocus="autofocus"></label><br />
+				<br /> <label>Email </label><label><input id="email"
+					type="email" required placeholder="Email Address"></label><br /> <br />
+				<label>Gender </label><label><input id="g1" name="gender"
+					type="radio" value="male">Male <input id="g2" name="gender"
+					type="radio" value="female">Female</label><br /> <br /> <label>Age
+				</label><label><input id="age" type="number" required
+					placeholder="Age"></label><br /> <br /> <label>Country </label><label><input
+					id="country" type="text" required placeholder="Full Name"></label><br />
+				<br /> <label>Course </label><label><select>
+
+						<option value="CS">Computer Science</option>
+						<option value="CE">Computer Engineering</option>
+						<option value="SE">Software Engineering</option>
+						<option value="EM">Engineering Management</option>
+						<option value="EE">Electrical Engineering</option>
+						<option value="CivE">Civil Engineering</option>
+						<option value="ME">Mechanical Engineering</option>
+				</select></label><br /> <br /> <label>Session </label><select>
+					<option value="F16">Fall 2016</option>
+					<option value="S17">Spring 2017</option>
+					<option value="F17">Fall 2017</option>
+				</select><br /> <br /> <label>Password </label><label><input
+					type="password" id="pass" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required placeholder="Password">
+				</label><br /> <br /> <input type="submit" value="Submit">
+			</fieldset>
+		</form>
+	</div>
+	<div class="footer"></div>
+</body>
+</html>
