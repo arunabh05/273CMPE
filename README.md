@@ -1,7 +1,2 @@
-# 273CMPE
+# Assignment 1 for CMPE-273
 
-Title: Homework1
-
-Name: Arunabh Shrivastava
-
-Student ID: 010861006
